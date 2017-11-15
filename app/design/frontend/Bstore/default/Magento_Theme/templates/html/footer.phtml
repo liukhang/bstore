@@ -1,0 +1,84 @@
+
+<div class="footer-subscribe">
+	<div class="container">
+		<div class="col-md-6">
+			<h3>Become a vip & b in the know!</h3>
+			<p>Sign up now to get all the exclusive privileges including chances to win FREE SHOES, the latest updates on our special offers , new products and fun competitions!</p>
+		</div>
+		<div class="col-md-6">
+	        <form class="form subscribe"
+			    novalidate
+			    action="<?php /* @escapeNotVerified */ echo $block->getFormActionUrl() ?>"
+			    method="post"
+			    data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+			    id="newsletter-validate-detail">
+			    <div class="field newsletter">
+			        <div class="control">
+			            <input name="email" type="email" id="newsletter"
+			                        placeholder="<?php /* @escapeNotVerified */ echo __('Enter your email') ?>"
+			                        data-validate="{required:true, 'validate-email':true}"/>
+			        </div>
+			    </div>
+			    <div class="actions">
+			        <button class="action subscribe primary" title="<?php /* @escapeNotVerified */ echo __('Subscribe') ?>" type="submit">
+			            <span><?php /* @escapeNotVerified */ echo __('Join') ?></span>
+			        </button>
+			    </div>
+			</form>
+			<p>By signing up you accept our <u>VIP and Privacy Policy</u></p>
+		</div>
+	</div>
+</div>
+<div class="container footer-support">
+	<div class="col-md-4">
+		<h3>Customer Support</h3>
+		<p>1300 818 849</p>
+		<p>enquiries@bstore.com.au</p>
+	</div>
+	<div class="col-md-4">
+		<h3>Our Community</h3>
+		<div class="social-links">
+			<a href="#" class="btn btn-social-icon btn-facebook">
+				<span class="fa fa-facebook"></span>
+			</a>
+			<a href="#" class="btn btn-social-icon btn-instagram">
+				<span class="fa fa-instagram"></span>
+			</a>
+		</div>	
+	</div>
+	<div class="col-md-4">
+		<h3>Shoe talk</h3>
+		<p>View our blog</p>
+	</div>
+</div>
+<div class="footer-default">
+	<div class="container">
+		<div class="row">
+			<div class="service footer-customer-service">
+				<h3>Customer Services</h3>
+				<div class="block-service footer-block" style="display: block;">
+					<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-customer-service')->toHtml(); ?>
+				</div>
+			</div>
+
+			<div class="categories footer-links">
+				<h3>Categories</h3>
+				<div class="block-categories footer-block" style="display: block;">
+					<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-categories')->toHtml(); ?>
+				</div>
+			</div>
+
+			<div class="our-brands footer-links">
+				<h3>Categories</h3>
+				<div class="block-our-brands footer-block" style="display: block;">
+					<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-our-brands')->toHtml(); ?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="footer-aboy">
+	<div class="container">
+		<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-about-bstore')->toHtml(); ?>
+	</div>
+</div>

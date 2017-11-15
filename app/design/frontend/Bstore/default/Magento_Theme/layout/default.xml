@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.container" htmlId="header">
+            <referenceContainer name="header.panel.wrapper" htmlClass="panel wrapper" htmlTag="div" before="-">
+                <block class="Magento\Framework\View\Element\Template" name="header-top" template="Magento_Theme::html/header-top.phtml" before="-">
+                </block>
+            </referenceContainer>
+            <referenceContainer name="header-wrapper" label="Page Header" as="header-wrapper" htmlTag="div" htmlClass="header content">
+                    <container htmlTag="div" htmlClass="col-md-12">
+                        <container htmlTag="div" htmlClass="row">
+                            <block class="Magento\Theme\Block\Html\Header\Logo" name="col-md-4 col-sm-4 logo">
+                                <arguments>
+                                    <argument name="logo_img_width" xsi:type="number">280</argument>
+                                    <argument name="logo_img_height" xsi:type="number">81</argument>
+                                </arguments>
+                            </block>
+                            <container name="header-main-search" htmlTag="div" htmlClass="col-md-4 col-sm-4 header-main-search"/>                       
+                            <container name="header-main-right" htmlTag="div" htmlClass="col-md-4 col-sm-4 header-main-right" after="-">
+                            </container> 
+                        </container>
+                    </container>
+            </referenceContainer>
+        </referenceContainer>
+        <referenceContainer name="header-main-right">
+            <block class="Magento\Customer\Block\Account\Customer" name="header-add.custom" template="headeradd.phtml" before="-"/>
+            <block class="Magento\Wishlist\Block\Link" name="wish-list-link" after="header.container"/>
+        </referenceContainer>
+        <referenceContainer name="page.top" htmlClass="header-bottom" htmlTag="div"/>
+
+        <referenceContainer name="footer-container">
+            <block class="Magento\Framework\View\Element\Template" name="footer-default" as="footer-default" template="Magento_Theme::html/footer.phtml" after="-"/>
+        </referenceContainer>
+        
+        <referenceBlock  name="footer_links" remove="true"/>
+        <referenceBlock  name="form.subscribe" remove="true"/>
+        <move element="top.search" destination="header-main-search"/>
+        <move element="logo" destination="header-main-logo"/>
+    </body>
+</page>
